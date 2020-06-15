@@ -7,6 +7,12 @@ public class forLoop {
             System.out.println(amount + " at " + i + "% interest = " +
                     String.format("%.2f",calculateInterest(amount,i)));
         }
+
+        for (int i = 8; i >= 2; i--){
+            //String.format("%.2f") က ဒဿမ ၂ လုံးဖြတ်တာ
+            System.out.println(amount + " at " + i + "% interest = " +
+                    String.format("%.2f",calculateInterest(amount,i)));
+        }
     }
 
     public static double calculateInterest (double amount, double interestRate){
