@@ -18,9 +18,10 @@ public class forLoop {
         int count = 0;
         for (int i = 20; i < 50; i++){
             if (isPrimeNumber(i)){
-                System.out.print(i + ", ");
+                System.out.println("Number " + i + " is a prime number");
                 count++;
                 if  (count == 3){
+                    System.out.println("Exiting for loop");
                     break;
                 }
             }
@@ -32,17 +33,29 @@ public class forLoop {
 
     }
 
-    public static boolean isPrimeNumber (int n){
-        if (n == 1){
+    public static boolean isPrimeNumber(int n) {
+        if (n == 1) {
             return false;
         }
-// for (int i = 2; i <= n/2; i++){
-        for (int i = 2; i < n; i++){
-            if (n % i == 0){
+
+        int countLooping = 0;
+
+//      ဒီ if statement ကအောက်ကနှစ်ခုထက်ပိုမြန်တယ်
+        for (int i = 2; i <= (long) Math.sqrt(n); i++) {
+
+//      ဒီ if statement ကအောက်ကတစ်ခုထက်ပိုမြန်တယ်
+//        for (int i = 2; i <= n/2; i++){
+
+//      ဒီ if statement ကအပေါ်နှစ်ခုထက်ပိုနှေးတယ်
+//      for (int i = 2; i < n; i++){
+
+            countLooping++;
+            System.out.println("Total Looping Times " + countLooping);
+
+            if (n % i == 0) {
                 return false;
             }
         }
-
         return true;
     }
 }
